@@ -1,0 +1,507 @@
+// #include<iostream>
+// using namespace std;
+// class Student{
+//     public:
+//     string name;
+//     string school;
+//     int age;
+//     string email;
+//     void personaldetails(){
+//         cout<<"NAME - "<<name<<"\n";
+//         cout<<"SCHOOL - "<<school<<"\n";
+//         cout<<"AGE - "<<age<<"\n";
+//         cout<<"E-MAIL - "<<email<<"\n";
+//     }
+
+// };
+// int main(){
+
+//    Student student1;
+//    student1.name="THOMAS JEFFERSON";
+//    student1.age=14;
+//    student1.email="thomasjefferson2905@gmail.com";
+//    student1.school="ADARSH VIDYA KENDRA";
+
+//    student1.personaldetails();
+
+
+
+// }
+
+
+//doing the same thing using constructors
+
+// #include<iostream>
+// using namespace std;
+// class student{
+// public:
+//         string name;
+//         string email;
+//         int age;
+//         string school;
+   
+//     void details(){
+//     cout<<"NAME - "<<name<<"\n";
+//     cout<<"AGE - "<<age<<"\n";
+//     cout<<"SCHOOL - "<<school<<"\n";
+//     cout<<"E-MAIL - "<<email<<"\n";
+
+//     }
+
+//     //using a constructor
+
+//     student(string Name,string School,string Email,int Age){
+    //note that variables declared inside the class must be given first and then on the rhs of the constructor 
+    //the parameters must be given if not maintained of this sort constructor fails.
+//         name=Name;
+//         school=School;
+//         email=Email;
+//         age=Age;
+//     }
+
+// };
+// int main(){
+//    student student1=student("THOMAS JEFFERSON","ADRASH VIDYA KENDRA","thomasjefferson2905@gmail.com",14);
+//    student student2=student("ESTHER PIG","ADARSH VIDYA KENDRA","estherpiggy2011@gmail.com",11);
+
+//    student1.details();
+//    student2.details();
+// }
+
+/*the difference int hese two programms
+a class is just like creating a datatype
+we ourselves are creating a data type
+
+1. WITHOUT USING CONSTRUCTORS
+to make sure anything that happens inside the class we create is observed in the main programm we 
+use the public access modifier
+
+then we specify the data type of all the variales that will be inside the big data type that we be creatin
+then to print all the data we inputted at will we will create a void function which is given the purpose of 
+printing
+
+then in the main programm we will invoke each and every vaariables we used inside class and then we will
+assign them various values
+
+then finally we will invoke the one that has the sole purpose of printing the void return type function to 
+print all the details that we just inputted
+
+2.USING CONSTRUCTORS
+note that the constructor is not like any normal function as it does not have the data type
+
+all the parameters inside the function are fed inside it and then the constructor just transferres those
+new fed in values to the print function to produce the result to us.
+*/
+
+/*rules of creating these constructors
+
+1. it must not have a return type
+2,it must have the same name as the class
+3.it must be public*/
+
+//ENCAPSULATION
+
+// #include<iostream>
+// using namespace std;
+// class student{
+// private:
+//     string Name;  /*all these things are put inside the private access modifier
+//                     which means all of these are encapsulated*/
+//     string School;
+//     string Email;
+//     int Age;
+// public:
+//     void setName(string name){
+//        Name=name;
+//     }
+//     string getName(){
+//         return Name;
+//     }
+
+//     void setAge(int age){
+//         Age=age;
+
+//     }
+//     int getAge(){
+//         return Age;
+//     }
+
+//     void setSchool(string school){
+//         School=school;
+//     }
+
+//     string getSchool(){
+//         return School;
+//     }
+
+//     void setEmail(string email){
+//         Email=email;
+//     }
+
+//     string getEmail(){
+//         return Email;
+//     }
+
+//     void print(){
+//         cout<<"NAME - "<<Name<<endl;
+//         cout<<"SCHOOL - "<<School<<endl;
+//         cout<<"E-MAIL - "<<Email<<endl;
+//         cout<<"AGE - "<<Age<<endl;
+//     }
+
+//     student(string name,string school,string email,int age){
+//         Name=name;
+//         School=school;
+//         Email=email;
+//         Age=age;
+//     }
+// };
+// int main(){
+//    student student1=student("THOMAS JEFFERSON","ADARSH VIDYA KENDRA","thomasjefferson2905@gmail.com",18);
+// //    student1.print();
+//        student1.setAge(134);
+       
+//        cout<<student1.getAge();
+
+// }
+
+//ABSTRACTION
+//it makes the complex logic is hidden behind something
+
+// #include<iostream>
+// using namespace std;
+// class abstractstudent//dont leave space between abstract and the class name
+// {
+//  virtual void crpromotion()=0;
+// };
+// class student:abstractstudent{
+//     public:
+//     string name;
+//     int mark;
+
+//     void toprint(){
+//         cout<<"NAME - "<<name<<"\n";
+//         cout<<"MARK - "<<mark<<"\n";
+//     }
+
+//     student(string NAME,int MARK){
+//         name=NAME;
+//         mark=MARK;
+//     }
+
+//     virtual void crpromotion(){
+//         if(mark>90){
+//             cout<<name<<" "<<"is the CR";
+//         }
+//     }
+// };
+// int main(){
+//      student student1=student("THOMAS JEFFERSON",99);
+//     //  student1.toprint();
+//     student1.crpromotion();
+     
+// }
+
+//INHERITANCE
+
+// //recreating the fairy tail wizards using dynamic memory allocation
+
+// #include<iostream>
+// using namespace std;
+// class mage{
+//     private:
+//    string name;
+  
+//    int physical;
+//    int magic;
+//    char rank;
+
+//    public:
+//    void setname(string *x){
+//     name=*x;
+//    }
+//    void setphysical(int *y){
+//     name=*y;
+//    }
+//    void setmagic(int *z){
+//     name=*z;
+//    }
+//    void setrank(char *a){
+//     name=*a;
+//    }
+
+//    string getname(){
+//     return name;
+//    }
+//    int getphysical(){
+//     return physical;
+//    }
+//    int getmagic(){
+//     return magic;
+//    }
+//    char getrank(){
+//     return rank;
+//    }
+
+//    void print(){
+//     cout<<"NAME :"<<name<<endl;
+//     cout<<"PHYSICAL :"<<physical<<endl;
+//     cout<<"MAGIC :"<<magic<<endl;
+//     cout<<"RANK :"<<rank<<endl;
+//    }
+//    mage(string *n,char *r,int *p,int* m){
+//        name=*n;
+//        rank=*r;
+//        physical=*p;
+//        magic=*m;
+//    }
+   
+// };
+// int main(){
+//     string l="NATSU DRAGNEEL";
+//     int m=1000;
+//     int n=500;
+//     char o='C';
+//     string *string1=&l;
+//     int *phy=&m;
+//     int*mag=&n;
+//     char*ran=&o;
+  
+//   mage mage1=mage(string1,ran,phy,mag); 
+//   mage mage2(mage1); //called copy constructor i can transfer all the properties of mage 1 to mage 2.
+//   mage1.print();
+//   mage2.print();
+  
+// }
+
+//INHERITANCE
+
+/*SYNTAX
+
+class parent_class{
+    body of the parent class;
+};
+
+class derived_class:access modifier parent_class{
+    body of the derived class;
+};
+
+the access modifier can be private protected or public
+
+*/
+
+// #include<iostream>
+// using namespace std;
+// class human{
+
+//    string name;
+//    int age;
+// public: 
+//    void setname(string n){
+//     name=n;
+//    }  
+
+//    void setage(int a){
+//     age=a;
+//    }
+   
+//    string getname(){
+//     return name;
+//    }
+    
+//    int getage(){
+//     return age;
+//    }
+
+// };
+
+// class male: public human{
+//      public:
+//      string chromosomes;
+
+//      void setchromosomes(string c){
+//         chromosomes=c;
+//      }
+
+//      string getchromosomes(){
+//         return chromosomes;
+//      }
+// };
+
+// class tall:public male{
+//     public:
+//    int height;
+//    void setheight(int h){
+//     height=h;
+//     if(height>180){
+//     cout<<"tall";
+//    }
+
+//    else{
+//     cout<<"shorty";
+//    }
+//    }
+
+  
+
+   
+// };
+// int main(){
+//    male person1;
+//    person1.setname("PETER");
+//    person1.setage(23);
+//    person1.setchromosomes("XY");/*so when an object is of the male class it can inherit everything from the 
+//    human class as well*/
+//    cout<<"NAME-"<<person1.getname()<<"\n"<<"AGE-"<<person1.getage()<<"\n"<<"CHROMOSOMES-"<<person1.getchromosomes()<<endl;
+
+
+// /*THE ACCESSIBILIY OF THE OBJECT DATA WHILE USING THE INHERITED CLASS IS BY KNOWING THE ACCESS MODIFIERS USED IN THE 
+// BASE CLASS AND THE ONE USED IN THE INHERITANCE TIME
+
+// IF THE BASE CLASS IS PUBLIC THEN THE ACCESS DEPENDS ON THE MODE DURING INHERITANCE
+// IF BASE CLASS IS PRIVATE THEN ACCESS IS DENIED IN AFTER INHERITANCE IRRESPECTIVE OF THE MODE DURING INHERITACE
+// */
+
+// /*multi level inheritance is creating a derived class from a derived class*/
+
+// tall person;
+// person.setheight(130);
+
+// }
+
+//multiple inheritance is when a derived class inherits from more than one base class
+
+// #include<iostream>
+// using namespace std;
+// class mom{
+//     public:
+//     int rate;
+//     string attitude;
+
+//     void setrate(int r){
+//          rate=r;
+//     }
+
+//     void setattitude(string a){
+//         attitude=a;
+//     }
+
+//     int getrate(){
+//         return rate;
+//     }
+
+//     string getattitude(){
+//         return attitude;
+//     }
+
+//     void printmomfeatures(){
+//         if(attitude[0]=='A'||attitude[0]=='E'||attitude[0]=='I'||attitude[0]=='O'||attitude[0]=='U'){
+//              cout<<"THE KID GOT HIS LOOKS AND STYLE FROM HIS MOM WHO IS A "<<rate<<" AND AN "<<attitude<<" WOMAN"<<endl;
+
+//         }
+//         else{
+        
+//         cout<<"THE KID GOT HIS LOOKS AND STYLE FROM HIS MOM WHO IS A "<<rate<<" AND A "<<attitude<<" WOMAN"<<endl;
+//         }
+//     }
+// };
+
+
+// class dad{
+//     public:
+//    string haircolor;
+//    int iq;
+
+//    void sethaircolor(string h){
+//        haircolor=h;
+//    }
+
+//    void setiq(int i){
+//     iq=i;
+// }
+
+//    string gethaircolor(){
+//     return haircolor;
+//    }
+
+//    int getiq(){
+//     return iq;
+//    }
+
+//    void printdadfeatures(){
+//     cout<<"HE ALSO HAS "<<haircolor<<" HAIR LIKE HIS DAD AND HAS AN "<<iq<<" IQ"<<endl;
+//    }
+// };
+
+// class son:public mom,public dad{
+//     public:
+//      int height;
+//      void setheight(int he){
+//         height=he;
+
+//         if(height>180){
+//             cout<<"HE IS TALL UNLIKE HIS MOM AND DAD";
+//         }
+
+//         else{
+//             cout<<"HE IS SHORT JUST LIKE HIS MOM AND DAD";
+//         }
+//      }
+
+    
+// };
+// int main(){
+//   son peter;
+//   peter.setrate(10);
+//   peter.sethaircolor("BROWN");
+//   peter.setattitude("OBNOXIOUS");
+//   peter.setiq(198);
+//   peter.printmomfeatures();
+//   peter.printdadfeatures();
+//   peter.setheight(185);
+// }
+
+//HEIRARCHIAL INHERITANCE
+
+/*there was a man A he had 2 sons B and C . B has D and F and C had E and G. so G is influnced by his dad and granddad not by his uncle
+or his cousins.*/
+
+//HYBRID INHERITANCE: IT IS THE COMBINATION OF MORE THAN ONE INHERITANCE
+
+//POLYMORPHISM: im a pandas son a gooses son a friend a student a master who am i? im all a dragon warrior - PO
+
+//COMPILE TIME POLYMORPHISM
+
+//using function overloading
+
+// #include<iostream>
+// using namespace std;
+
+// class sum{
+//     public:
+   
+//    int add(int number1,int number2){
+//     return number1+number2;
+//    }
+
+//    int add(int number1,int number2,int number3){
+//     return number1+number2+number3;
+//    }
+
+//    double add(double number1,double number2,double number3){
+//     return number1+number2+number3;
+//    }
+// };
+// int main(){
+
+//     sum test;
+//     cout<<test.add(2,5)<<endl;
+//     cout<<test.add(1,2,3)<<endl;
+//     cout<<test.add(1.34,2.3,4.5)<<endl;
+
+//     //we have the same function but we overload it to give different results by changing the number of
+//     //parameters and by changing the dat type.
+
+// }
+
+//using operator overloading
